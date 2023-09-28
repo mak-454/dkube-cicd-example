@@ -7,7 +7,7 @@ dependencies:
   - python=3.7
   - pip
   - pip:
-    - dkube-cicd-controller==1.6.0          
+    - /tmp/dkube_cicd_controller-1.6.0-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl
     - git+https://github.com/oneconvergence/dkube.git@3.8
     - matplotlib
     - logger
