@@ -85,8 +85,8 @@ setup_op = components.load_component(text = setup_component)
 def d3pipeline(
     user,
     auth_token,
-    tags=json.dumps(["testing"]),
     project_id,
+    tags=json.dumps(["testing"]),
     #Clinical preprocess
     clinical_preprocess_script="python clinical_reg/cli-pre-processing.py",
     clinical_preprocess_datasets=json.dumps(["clinical"]),
