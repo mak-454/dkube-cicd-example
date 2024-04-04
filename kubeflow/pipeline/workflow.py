@@ -19,7 +19,7 @@ from kfp.components._yaml_utils import dump_yaml
 from kubernetes import client as k8s_client
 import json
 import os
-from dkube.sdk import *
+#from dkube.sdk import *
 
 setup_component = '''
 name: create_dkube_resource
@@ -46,7 +46,7 @@ implementation:
     ]
 '''
 
-# Get the project ID passed from JupyterLab creation
+'''# Get the project ID passed from JupyterLab creation
 project_id = os.environ.get("DKUBE_PROJECT_ID", "")
 print("project id")
 # Check to see if this is blank, and if so use "clinical-reg"
@@ -67,7 +67,7 @@ if not project_id:
             print(f"Project \"{project_name}\" already exists")
             project_id = api.get_project_id(project_name)
             print(project_id)
-
+'''
 def _component(stage, name):
     with open('kubeflow/components/{}/component.yaml'.format(stage), 'rb') as stream:
         cdict = load_yaml(stream)
@@ -86,7 +86,7 @@ def d3pipeline(
     user,
     auth_token,
     tags=json.dumps(["testing"]),
-    project_id=project_id,
+    project_id,
     #Clinical preprocess
     clinical_preprocess_script="python clinical_reg/cli-pre-processing.py",
     clinical_preprocess_datasets=json.dumps(["clinical"]),
